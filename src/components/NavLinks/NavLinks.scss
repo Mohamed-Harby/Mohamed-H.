@@ -1,0 +1,26 @@
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+  font-size: 0.95rem;
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $text-light;
+    text-decoration: none;
+    padding: 0.2rem 0.5rem;
+    border-radius: $border-radius;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: rgba($primary, 0.1);
+      color: $primary;
+    }
+
+    svg {
+      width: 17px;
+      height: 17px;
+    }
+  }
+}

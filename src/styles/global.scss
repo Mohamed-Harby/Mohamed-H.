@@ -1,0 +1,74 @@
+// src/styles/global.scss
+@import "variables";
+@import "mixins";
+
+body {
+  margin: 0;
+  font-family: "Poppins", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif;
+  background: #1d1916;
+  color: $text-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    // width: 100%;
+    // height: 100%;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .background {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: #1d1916;
+    .top-section {
+      position: relative;
+      background-image: url("../assets/images/background.jpeg");
+      background-size: cover;
+      background-position: center;
+      height: 500px; /* Adjust the height as needed */
+      width: 100%;
+      z-index: 1;
+    }
+  }
+
+  .content-overlay {
+    margin-top: 10rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 240px;
+  }
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
