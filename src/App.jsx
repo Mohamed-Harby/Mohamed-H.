@@ -1,11 +1,9 @@
 // src/App.jsx
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { NavBar } from './components/NavBar/NavBar';
-import { Home} from './pages/Home/Home';
-import Blog from "./pages/Blog/Blog";
-import BlogPostPage from "./pages/BlogPostPage/BlogPostPage";
-import './styles/global.scss';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { NavBar } from "./components/NavBar/NavBar";
+import "./styles/global.scss";
+import AppRouter from "./components/AppRouter/AppRouter";
 
 const App = () => (
   <BrowserRouter>
@@ -13,15 +11,12 @@ const App = () => (
       <div className="background">
         <div className="top-section" />
       </div>
-      <NavBar />
+      <NavBar /> {/* Floating NavLinks remains as-is */}
       <div className="content-overlay">
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-        </Routes>
-      </main>
+        <main>
+          {/* AppRouter handles routing between different sections */}
+          <AppRouter />
+        </main>
       </div>
     </div>
   </BrowserRouter>

@@ -1,0 +1,47 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.experience-item {
+  margin-bottom: 4rem;
+
+  .experience-meta {
+    font-size: 0.9rem;
+    color: $text-muted;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+
+    .company {
+      font-weight: bold;
+    }
+
+    .date,
+    .location {
+      font-style: italic;
+    }
+  }
+
+  .experience-description {
+    ul {
+      list-style-type: none; // Remove default bullets
+      padding: 0; // Remove default padding
+    }
+
+    li {
+      position: relative; // Positioning for the arrow
+      padding-left: 25px; // Space for the arrow
+      margin-bottom: 20px; // Add space between each item
+    }
+
+    li::before {
+      content: "#"; // Arrow character
+      position: absolute; // Position the arrow
+      left: 0; // Align it to the left
+      color: $text-muted; // Arrow color
+      font-size: 1.1rem;
+      //   text-decoration: underline;
+      //   color: $primary;
+    }
+  }
+}

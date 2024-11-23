@@ -1,0 +1,74 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.project-item {
+  margin-bottom: 4rem;
+  h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    user-select: text;
+  }
+
+  .project-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 1.4rem;
+
+    .belongs-to {
+      font-weight: bold;
+      color: $text-muted;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: text;
+    }
+
+    .repo-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: $text-light;
+      text-decoration: none;
+      padding: 0.2rem 0.5rem;
+      border-radius: $border-radius;
+      background: rgba($text-muted, 0.1);
+      transition: all 0.2s ease;
+      user-select: none;
+
+      &:hover {
+        background: rgba($primary, 0.1);
+        color: $primary;
+      }
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .project-description {
+    ul {
+      list-style-type: none; // Remove default bullets
+      padding: 0; // Remove default padding
+    }
+
+    li {
+      position: relative; // Positioning for the arrow
+      padding-left: 25px; // Space for the arrow
+      margin-bottom: 8px; // Add space between each item
+      font-size: 0.95rem;
+      user-select: text;
+    }
+
+    li::before {
+      content: "<>"; // Arrow character
+      position: absolute; // Position the arrow
+      left: 0; // Align it to the left
+      color: $text-muted; // Arrow color
+      font-size: 1.1rem;
+    }
+  }
+}

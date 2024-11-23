@@ -1,0 +1,43 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.app-router {
+  .page-spliter {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 1rem;
+    padding: 5rem 0;
+    position: fixed;
+    width: 150px;
+
+    a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: $text-muted;
+      font-weight: 600;
+      transition: color 0.3s, border-bottom 0.3s;
+      text-decoration: underline;
+      font-family: "Courier New", Courier, monospace;
+      &:hover {
+        color: $primary;
+      }
+
+      &.active {
+        color: $primary;
+        border-bottom: 2px solid $primary;
+      }
+    }
+  }
+  .section-outlet {
+    width: 850px;
+    height: 100vh;
+    margin-left: 160px;
+  }
+}
